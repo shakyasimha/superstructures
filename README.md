@@ -1,3 +1,3 @@
 ## Superstructures 
 
-![Superstructures Logo]("public/LOG-Model square.png")
+Website repo - WIP
