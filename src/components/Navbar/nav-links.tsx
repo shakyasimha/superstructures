@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { montserrat } from "@/app/ui/fonts";
 
 // Navbar links are here
 const links = [
@@ -24,20 +28,26 @@ const links = [
     },
 ]
 
-export default function NavLinks() {
+export default function NavLinks({ className }: any) {
+    const pathname = usePathname(); // Get current route 
+
     return (
-        <>
-        {links.map((link) => {
-            return (
+        <ul className={`flex space-x-4 ${montserrat.className} ${className}`}>
+            {links.map((link) => (
+                <li key={link.name}>
                 <Link
-                    key={link.name}
                     href={link.href}
-                    className="flex items-center text-[#e8344a] hover:text-[#264564] transition-colors"
+                    className={`flex items-center px-3 py-2 text-[#b53a57] hover:text-[#264564] ${
+                    pathname === link.href
+                        ? 'border-b-2 border-[#b53a57] font-bold'
+                        : 'border-b-2 border-transparent'
+                    } transition-all duration-300 ease-in-out`}
+                    aria-current={pathname === link.href ? 'page' : undefined}
                 >
                     <p className="hidden md:block">{link.name}</p>
                 </Link>
-            )
-        })}
-        </>
+                </li>
+            ))}
+        </ul>
     )
 }

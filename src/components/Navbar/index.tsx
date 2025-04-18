@@ -13,12 +13,12 @@ export default function Navbar() {
                     <div className="flex items-center justify-between">
                         {/* Logo goes here */}
                         <Image 
-                            src="/LOG-square.svg"
+                            src="/LOG-square-red.svg"
                             alt="Logo"
-                            width={80}
-                            height={80}
+                            width={40}
+                            height={40}
                         />
-                        <span className={`${montserrat.className} font-bold text-[#e8344a] p-4 text-xl`}>
+                        <span className={`${montserrat.className} font-bold text-[#b53a57] p-4 text-xl`}>
                             SUPERSTRUCTURES
                         </span>
                     </div>
