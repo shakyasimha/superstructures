@@ -32,7 +32,7 @@ export default function NavLinks() {
                 <Link
                     key={link.name}
                     href={link.href}
-                    className="flex items-center space-x-3 text-[#e8344a] transition-colors"
+                    className="flex items-center text-[#e8344a] hover:text-[#264564] transition-colors"
                 >
                     <p className="hidden md:block">{link.name}</p>
                 </Link>
