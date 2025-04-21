@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import clsx from "clsx";
 import { montserrat } from "@/app/ui/fonts";
 
 // Navbar links are here
@@ -41,12 +42,12 @@ export default function NavLinks({ className }: NavLinksProps) {
                 <li key={link.name}>
                 <Link
                     href={link.href}
-                    className={`flex items-center px-3 py-2 text-[#b53a57] hover:text-[#264564] ${
-                    pathname === link.href
-                        ? 'border-b-2 border-[#b53a57] font-bold'
-                        : 'border-b-2 border-transparent'
-                    } transition-all duration-300 ease-in-out`}
-                    aria-current={pathname === link.href ? 'page' : undefined}
+                    className={clsx(
+                        "flex items-center px-3 py-2 text-[#264564] hover:border-b-2 hover:text-[#b53a57] hover:border-[#b53a57] transition-all duration-200 ease-in-out", // default link style
+                            {
+                                "border-b-2 text-[#b53a57] border-[#b53a57] font-bold transition-all duration-300 ease-in-out": pathname === link.href, /// active link style</li>
+                            }
+                    )}
                 >
                     <p className="hidden md:block">{link.name}</p>
                 </Link>
