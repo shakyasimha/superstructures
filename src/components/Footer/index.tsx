@@ -10,7 +10,7 @@ export default function Page() {
             <div className="flex flex-row">
                 {/* Company info */}
                 <div className="flex flex-col justify-between px-4 py-4 ">
-                    <div className="text-xl">Superstructures, Pvt. Ltd.</div>
+                    <div className="text-2xl">Superstructures, Pvt. Ltd.</div>
                     
                     <Link 
                         key="location"
