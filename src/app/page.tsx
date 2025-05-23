@@ -8,7 +8,7 @@ export default function Home() {
     <div className="w-full h-full flex flex-col flex-grow">
         <Slideshow />
         
-        <div className="flex flex-col items-center m-auto">
+        <div className="flex flex-col items-center m-auto sm:flex-grow">
           Superstructures Inc
         </div>
     </div>
